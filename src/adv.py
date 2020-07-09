@@ -1,5 +1,6 @@
 from room import Room
-
+from player import Player
+from textwrap import wrap
 # Declare all the rooms
 
 room = {
@@ -49,3 +50,14 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+if __name__=="__main__":
+    name = input("Input your name: ")
+    player = Player(name, room['outside'])
+    for i in range(3):
+        print('.')
+
+    while True:
+        print('','---','', sep='\n')
+        print(player.current_room.name.upper())
+        for l in wrap(player.current_room.desc, 20):
+            print(l)
