@@ -5,9 +5,10 @@
 class Player:
     """A class to hold player information, i.e. what room is the character
     currently in?"""
-    def __init__(self, name, current_room):
+    def __init__(self, name, current_room, items=None):
         self.name = name 
         self.current_room = current_room
+        self.items = []
 
     def move(self, direction):
         if direction == 'n' and self.current_rooom.n_to:
